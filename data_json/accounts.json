@@ -1,0 +1,47 @@
+[
+	{
+		"name": "Ricci Ales",
+		"password": "password",
+		"email": "ricci@ucsd.edu",
+		"phone": "123-456-7890",
+		"otherInfo": "facebook: Ricci Ales",
+		"profilePicture": "https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100",
+		"postNumber": 1
+	},
+	{
+		"name": "Jane Madison",
+		"password": "password",
+		"email": "jane@ucsd.edu",
+		"phone": "123-456-7890",
+		"otherInfo": "facebook: Jane Madison",
+		"profilePicture": "https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100",
+		"postNumber": 1
+	},
+	{
+		"name": "Amber Shroyer",
+		"password": "password",
+		"email": "amber@ucsd.edu",
+		"phone": "123-456-7890",
+		"otherInfo": "facebook: Amber Shroyer",
+		"profilePicture": "https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100",
+		"postNumber": 1
+	},
+	{
+		"name": "Janice Wang",
+		"password": "password",
+		"email": "janice@ucsd.edu",
+		"phone": "123-456-7890",
+		"otherInfo": "facebook: Janice Wang",
+		"profilePicture": "https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100",
+		"postNumber": 1
+	},
+	{
+		"name": "Brayden Smith",
+		"password": "password",
+		"email": "brayden@ucsd.edu",
+		"phone": "123-456-7890",
+		"otherInfo": "facebook: Brayden Smith",
+		"profilePicture": "https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100",
+		"postNumber": 1
+	}
+]

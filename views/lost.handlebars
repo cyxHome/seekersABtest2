@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+
+    <link href="css/hci-friends.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+
+
+<body>
+
+
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><img src="http://i57.tinypic.com/wbf4nl.jpg">
+                    <a href="#">
+                    </a>
+                </li>
+
+                <li><a href="/">Home Page</a></li>
+                <li><a href="/found">Found Gallery</a></li>
+                <li class = "current"><a href="/lost">Lost Gallery</a></li>
+                <li><a href="/about">About This App</a></li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+
+
+			<div class = "container">
+					<div class="row navbar navbar-static-top">
+
+						<div  class="container nav-link col-md-3" id="menu-toggle">
+							<button type ="button" class = "navbar-toggle" >
+							    <span class= "sr-only">Toggle navigation</span>
+								<span class = "icon-bar  navbar-inverse"></span>
+								<span class = "icon-bar  navbar-inverse"></span>
+								<span class = "icon-bar  navbar-inverse"></span>
+							</button>
+						</div>
+
+						
+						<div class="container navbar-right nav-link col-md-3 menu-close"><a href="#login " data-toggle="modal">Login <span class="glyphicon glyphicon-off" aria-hidden="true"></span></a></div>
+
+						<div class="container navbar-right nav-link dropdown col-md-3 menu-close">
+
+						<a href="#login " data-toggle="modal" onclick="postNeedLogin()" class = "dropdown-toggle" data-toggle = "dropdown">New Post <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+
+
+
+						</div>
+
+					</div>
+			</div>
+
+        	
+        	<div  class = "page-table">
+
+	        	<div class = "page-cell">
+					<div class="container">
+						<div class="gallery-title"> Lost Gallery </div>
+						<div class = "row losing-items">
+							{{#each lost-items}}
+
+								<div class = "col-xs-5">
+										<h3>{{title}}</h3>
+										<h4>Posted at {{date}}</h4>
+								</div>
+
+								<div class = "col-xs-7">
+										<img src="{{imageURL}}" class="img-responsive"> 
+								</div>
+
+								<div class = "col-xs-12">
+									<p>{{description}}</p>
+									<!-- fake hyperlink, actually redirect through the click listener -->
+									<i>For more information, contact <a href="#login " data-toggle="modal" class="seeProfileNeedLogin" author="{{author}}">{{author}}</a>.</i>
+									<hr>
+								</div>
+								
+							{{/each}}
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+
+
+<!-- Login form start here -->
+
+
+	<div class = "modal fade" id = "login" role = "dialog">
+		<div class = "modal-dialog">
+			<div class = "modal-content">
+				<form class = "form-horizontal" id="login-form">
+					<div class = "modal-header">
+						<h4>Welcome to Seeker!</h4>
+					</div>
+
+
+					<div class = "modal-body">
+
+						<div class = "form-group">
+
+							<label for = "login-name" class = "col-lg-2 control-label">Name:</label>
+							<div class = "col-lg-10">
+
+								<input type = "text" class = "form-contol" id = "login-name" placeholder = "Phone,email or username">
+							</div>
+						</div>
+
+						<div class = "form-group">
+
+							<label for = "login-password" class = "col-lg-2 control-label">Password:</label>
+							<div class = "col-lg-10">
+
+								<input type="password" class = "form-contol" id = "login-password" placeholder = "Password">
+							</div>
+						</div>
+
+					</div>
+
+
+					<div class = "modal-footer">
+						<a class = "btn btn-success pull-left" type = "submit" data-dismiss = "modal" href="#sign-up" data-toggle="modal">Sign up now</a>
+						<a class = "btn btn-default" data-dismiss = "modal">Close</a>
+						<a class = "btn btn-primary" id="loginRequestSubmitButton" type = "submit">Login</a>
+					</div>
+
+				</form>
+
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class = "modal fade" id = "sign-up" role = "dialog">
+		<div class = "modal-dialog">
+			<div class = "modal-content">
+				<form class = "form-horizontal" id="sign-up-form">
+					<div class = "modal-header">
+						<h4>Welcome to Seeker!</h4>
+					</div>
+
+
+					<div class = "modal-body">
+
+						<div class = "form-group">
+
+							<label for = "sign-up-name" class = "col-lg-2 control-label">Name:</label>
+							<div class = "col-lg-10">
+
+								<input type = "text" class = "form-contol" id = "sign-up-name" placeholder = "name">
+							</div>
+						</div>
+
+						<div class = "form-group">
+
+							<label for = "sign-up-email" class = "col-lg-2 control-label">Email:</label>
+							<div class = "col-lg-10">
+
+								<input type = "text" class = "form-contol" id = "sign-up-email" placeholder = "you@example.com">
+							</div>
+						</div>
+
+
+
+						<div class = "form-group">
+
+							<label for = "sign-up-password" class = "col-lg-2 control-label">Password:</label>
+							<div class = "col-lg-10">
+
+								<input type="password" class = "form-contol" id = "sign-up-password" placeholder = "Password">
+							</div>
+						</div>
+
+						<div class = "form-group">
+
+							<label for = "sign-up-password-confirm" class = "col-lg-2 control-label">Confirm Password:</label>
+							<div class = "col-lg-10">
+
+								<input type="password" class = "form-contol" id = "sign-up-password-confirm" placeholder = "Confirm Password">
+							</div>
+						</div>
+
+					</div>
+
+
+					<div class = "modal-footer">
+						<a class = "btn btn-default" data-dismiss = "modal">Close</a>
+						<a class = "btn btn-primary" id="newAccountCreateButton" type = "submit">Creat Account</a>
+					</div>
+
+				</form>
+
+
+			</div>
+		</div>
+	</div>
+
+
+<!-- Login form end here -->
+
+
+	<script src="/js/jquery-1.11.0.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="/js/hci-friends.js"></script>
+	<script src="js/localforage.js"></script>
+
+
+</body>
+
+
+
+
+</html>
+

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+
+    <link href="css/hci-friends.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+
+
+<body>
+
+
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><img src="http://i57.tinypic.com/wbf4nl.jpg">
+                    <a href="#">
+                    </a>
+                </li>
+                    <li><a href="/logined-index">Home Page</a></li>
+                    <li><a href="/logined-found">Found Gallery</a></li>
+                    <li><a href="/logined-lost">Lost Gallery</a></li>
+                    <li><a href="/logined-about">About This App</a></li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+
+
+			<div class = "container">
+					<div class="row navbar navbar-static-top">
+
+						<div  class="container nav-link col-md-3" id="menu-toggle">
+							<button type ="button" class = "navbar-toggle" >
+							    <span class= "sr-only">Toggle navigation</span>
+								<span class = "icon-bar  navbar-inverse"></span>
+								<span class = "icon-bar  navbar-inverse"></span>
+								<span class = "icon-bar  navbar-inverse"></span>
+							</button>
+						</div>
+
+						<div class="container navbar-right nav-link dropdown col-md-3 menu-close">
+
+							<a class = "dropdown-toggle" data-toggle = "dropdown">Account <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+							<!-- <div class = "container"> -->
+							<ul class = "dropdown-menu 'pull-right'">
+							
+
+								<!-- <li><a href="/account-message">Mail <span class="badge">4</span></a></li> -->
+								<li><a href="/account-mypost">My Post</a></li>
+								<li><a href="/account-profile">Profile</a></li>
+								<li><a  href="#logout "data-toggle="modal">Logout</a></li>
+
+							</ul>
+							<!-- </div> -->
+
+						</div>
+
+						<div class="container navbar-right nav-link dropdown col-md-3 menu-close">
+
+							<a class = "dropdown-toggle" data-toggle = "dropdown">New Post <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+
+							<ul class = "dropdown-menu">
+							
+								<li><a href="/post-found">I Just Found</a></li>
+								<li><a href = "/post-lost">I Just Lost...</a></li>
+
+							</ul>
+
+
+						</div>
+
+					</div>
+			</div>
+
+
+        	
+        	<div  class = "page-table">
+
+	        	<div class = "page-cell">
+					<div class="container menu-close">
+<!-- the above are navigation bars -->
+<!-- all page content start here -->
+
+						<div class = "container row my-post">
+
+							<div class = "col-xs-12">
+								<h2 class="my-post-category">My found items</h2>
+							</div>
+
+							<div class = "col-xs-12">
+							{{#each my-founds}}
+								<div class="my-post-items" id="myPost{{_id}}">
+
+									<div class = "col-xs-4 row">
+										<div class = "col-xm-6">
+											<h3>{{title}}</h3>
+										</div>
+
+										<div class = "col-xm-6">
+											<p class = "small-text">{{date}}, {{time}}</p>
+										</div>
+
+									</div>
+
+									<div class = "col-xs-6">
+										<img src="{{imageURL}}" class="img-responsive"> 
+									</div>
+
+									<div class = "col-xs-1 post-edit-icon">
+										<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+									</div>
+
+									<div class = "col-xs-1 post-edit-icon">
+										<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+									</div>
+
+									<div class = "col-xs-12">
+										<hr>
+									</div>
+								</div>
+							{{/each}}
+							</div>
+
+							<div class = "col-xs-12">
+								<h2 class="my-post-category">My lost items</h2>
+							</div>
+
+							<div class = "col-xs-12">
+							{{#each my-losts}}
+								<div class="my-post-items" id="myPost{{_id}}">
+									<div class = "col-xs-4 row">
+										<div class = "col-xm-6">
+											<h3>{{title}}</h3>
+										</div>
+
+										<div class = "col-xm-6">
+											<p class = "small-text">{{date}}, {{time}}</p>
+										</div>
+										
+									</div>
+
+									<div class = "col-xs-6">
+										<img src="{{imageURL}}" class="img-responsive"> 
+									</div>
+
+									<div class = "col-xs-1 post-edit-icon">
+										<a href = "#"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+									</div>
+
+									<div class = "col-xs-1 post-edit-icon">
+										<a href = "#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+									</div>
+
+									<div class = "col-xs-12">
+										<hr>
+									</div>
+								</div>
+							{{/each}}
+							</div>
+
+							{{#each no-post}}
+								<h2>You have not post anything, click 'New Post' to add a post! </h2>
+							{{/each}}
+
+						</div>
+
+<!-- all page content end here -->
+					</div> 
+				</div>
+
+			</div>
+
+		</div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+<!-- logout comfirt form is here -->
+
+    <div class = "modal fade" id = "logout" role = "dialog">
+        <div class = "modal-dialog">
+            <div class = "modal-content">
+                <form class = "form-horizontal" id="logout-form">
+                    <div class = "modal-header">
+                        <h4>Do you want to logout? </h4>
+                    </div>
+
+
+                    <div class = "modal-footer">
+                        <a class = "btn btn-default" data-dismiss = "modal">No </a>
+                        <a href="/" class = "btn btn-primary" onclick="logoutSuccess()" type = "submit">Yes</a>
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+	<script src="/js/jquery-1.11.0.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="/js/hci-friends.js"></script>
+    <script src="js/localforage.js"></script>
+
+
+
+</body>
+
+
+</html>

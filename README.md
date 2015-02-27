@@ -1,2 +1,4 @@
-# seekersABtest2
-the alternative prototype 
+lab7
+====
+
+Lab 7: Databases

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+
+    <link href="css/hci-friends.css" rel="stylesheet">
+
+    <link href="css/account-profile.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+
+
+<body>
+
+
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><img src="http://i57.tinypic.com/wbf4nl.jpg">
+                    <a href="#">
+                    </a>
+                </li>
+                    <li><a href="/logined-index">Home Page</a></li>
+                    <li><a href="/logined-found">Found Gallery</a></li>
+                    <li><a href="/logined-lost">Lost Gallery</a></li>
+                    <li><a href="/logined-about">About This App</a></li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+
+
+			<div class = "container">
+					<div class="row navbar navbar-static-top">
+
+						<div  class="container nav-link col-md-3" id="menu-toggle">
+							<button type ="button" class = "navbar-toggle" >
+							    <span class= "sr-only">Toggle navigation</span>
+								<span class = "icon-bar  navbar-inverse"></span>
+								<span class = "icon-bar  navbar-inverse"></span>
+								<span class = "icon-bar  navbar-inverse"></span>
+							</button>
+						</div>
+
+						
+						<div class="container navbar-right nav-link dropdown col-md-3 menu-close">
+
+							<a class = "dropdown-toggle" data-toggle = "dropdown">Account <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+							<!-- <div class = "container"> -->
+							<ul class = "dropdown-menu 'pull-right'">
+							
+
+								<!-- <li><a href="/account-message">Mail <span class="badge">4</span></a></li> -->
+								<li><a href="/account-mypost">My Post</a></li>
+								<li><a href="/account-profile">Profile</a></li>
+								<li><a  href="#logout "data-toggle="modal">Logout</a></li>
+							</ul>
+							<!-- </div> -->
+
+						</div>
+
+						<div class="container navbar-right nav-link dropdown col-md-3 menu-close">
+
+							<a class = "dropdown-toggle" data-toggle = "dropdown">New Post <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+
+							<ul class = "dropdown-menu">
+							
+								<li><a href="/post-found">I Just Found</a></li>
+								<li><a href = "/post-lost">I Just Lost...</a></li>
+
+							</ul>
+
+
+						</div>
+
+					</div>
+			</div>
+
+
+        	
+        	<div  class = "page-table">
+
+	        	<div class = "page-cell">
+					<div class="contain menu-close">
+
+<!-- page content start here -->
+
+						<div class="container">
+						      <div class="row">
+							      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+							  		<br>
+							      </div>
+						        
+						          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+	<!-- profile content start here -->						   
+						   		{{#each profile}}
+						          <div class="panel panel-info" id="user-profile">
+							            <div class="panel-heading">
+
+							            	<span class="pull-right">
+							                     <a href="/account-profile-edit" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning" id="editUserProfileSubmitButton"><i class="glyphicon glyphicon-edit"></i></a>
+							                </span>
+
+							              <h3 class="panel-title" id="user-profile-name">{{name}}</h3>
+							            </div>
+							            <div class="panel-body">
+							              <div class="row">
+							                <div class="col-md-3 col-lg-3 " align="center" id="user-profile-picture"><img alt="User Pic" src={{profilePicture}} class="img-circle">
+							                </div>
+							                
+							                <div class=" col-md-9 col-lg-9 "> 
+							                  <table class="table table-user-information">
+							                    <tbody>
+
+							                      <tr>
+							                        <td>Email</td>							                   
+							                        <td><div id="user-profile-email"><a href="mailto:info@support.com">{{email}}</a></div></td>
+							                      </tr>
+												
+												  <tr>
+							                        <td>Phone Number</td>
+							                        <td><div id="user-profile-phone">{{phone}}</div></td>
+												  </tr>
+							                      
+							                      <tr>
+							                        <td>Other contact information</td>
+							                        <td><div id="user-profile-otherInfo">{{otherInfo}}</a></div></td>
+							                      </tr>
+							                     
+							                      <tr>
+							                        <td>Post</td>
+							                        <td><div id="user-profile-post"><a href = "/account-mypost">{{postNumber}}</a></div></td>
+							                      </tr>
+
+							                    </tbody>
+							                  </table>
+							                </div>
+
+							              </div>
+						            	</div>
+						          </div>
+						          {{/each}}
+	<!-- profile content start here -->	
+
+						        </div>
+						      </div>
+
+
+<!-- page content end here -->
+
+
+					</div> 
+				</div>
+
+			</div>
+
+		</div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+<!-- logout comfirt form is here -->
+
+    <div class = "modal fade" id = "logout" role = "dialog">
+        <div class = "modal-dialog">
+            <div class = "modal-content">
+                <form class = "form-horizontal" id="logout-form">
+                    <div class = "modal-header">
+                        <h4>Do you want to logout? </h4>
+                    </div>
+
+
+                    <div class = "modal-footer">
+                        <a class = "btn btn-default" data-dismiss = "modal">No </a>
+                        <a href="/" class = "btn btn-primary" onclick="logoutSuccess()" type = "submit">Yes</a>
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+	<script src="/js/jquery-1.11.0.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="/js/hci-friends.js"></script>
+    <script src="js/localforage.js"></script>
+
+
+
+</body>
+
+
+</html>
