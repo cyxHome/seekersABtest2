@@ -300,25 +300,11 @@ function initializePage() {
 	$('#searchSubmitButton').click(function(e) {
 		console.log('clicked searchSubmitButton');
 		var searchLost = $('#search-form #search-lost').val();
-		var searchFound = $('#search-form #search-found').val();
 		console.log("searchLost: "+searchLost+" Its length: "+searchLost.length);
-		console.log("searchFound: "+searchFound+" Its length: "+searchFound.length);
-		if (searchLost.length !==0 && searchFound.length !==0) 
-		{   // alert the user that he/she has specified both lost and found 
-			alert("please only enter in one bar!");
-			return;
-		}
-		else if (searchLost.length !==0)
+		if (searchLost.length !==0)
 		{   // post the item to search and display all the related items in the lost gallery
 			$.post('/search-post/lost', { item: searchLost }, function() { 
 				// redirect to lost gallery (logined-lost.handlebars)
-				window.location.href = '/search-post';  
-			});
-		}
-		else if (searchFound.length !==0)
-		{	// post the item to search and display all the related items in the found gallery
-			$.post('/search-post/found', { item: searchFound }, function() { 
-				// redirect to found gallery (logined-lost.handlebars)
 				window.location.href = '/search-post';  
 			});
 		}

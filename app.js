@@ -101,7 +101,6 @@ app.post('/edit-profile/postNumberPlusOne', accountprofileedit.postPlusOne);
 app.post('/edit-profile/postNumberMinusOne', accountprofileedit.postMinusOne);
 app.post('/gotoOthersProfile', othersprofile.gotoOthersProfile);
 app.post('/search-post/lost', searchpost.searchForLostItems);
-app.post('/search-post/found', searchpost.searchForFoundItems);
 
 
 http.createServer(app).listen(app.get('port'), function(){
